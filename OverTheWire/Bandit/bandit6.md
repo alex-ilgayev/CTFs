@@ -11,7 +11,7 @@ ls, cd, cat, file, du, find, grep
 ## Solution
 
 After searching for various `find` parameters, the next command does the job:
-```
+```bash
 bandit6@bandit:~$ find / -group bandit6 -user bandit7 -size 33c 2>/dev/null
 /var/lib/dpkg/info/bandit7.password
 bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password 
