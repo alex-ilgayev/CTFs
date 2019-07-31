@@ -11,7 +11,7 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 ## Solution
 
 The next combination of linux commands pipeline will do the job:
-```
+```bash
 bandit8@bandit:~$ cat data.txt | sort | uniq -c | sort | tail -n 1
       1 *****
 ```
