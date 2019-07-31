@@ -8,7 +8,7 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 ## Solution
 
 Using the `strings` command which prints all the human-readable strings paired with `grep` will give us the flag:
-```
+```bash
 bandit9@bandit:~$ strings data.txt  | grep =
 2========== the
 ========== password
