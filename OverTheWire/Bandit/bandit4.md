@@ -8,7 +8,7 @@ ls, cd, cat, file, du, find
 ## Solution
 
 We see multiple files which one of them contains the flag:
-```
+```bash
 bandit4@bandit:~$ cd inhere/
 bandit4@bandit:~/inhere$ ls -lha
 total 48K
@@ -27,7 +27,7 @@ drwxr-xr-x 3 root    root    4.0K Oct 16  2018 ..
 bandit4@bandit:~/inhere$ 
 ```
 I used a short script in python to open the files and print their content:
-```
+```bash
 bandit4@bandit:~/inhere$ python
 Python 2.7.13 (default, Sep 26 2018, 18:42:22) 
 [GCC 6.3.0 20170516] on linux2
