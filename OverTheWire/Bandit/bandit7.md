@@ -8,7 +8,7 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 ## Solution
 
 Simple `grep` command will solve the case:
-```
+```bash
 bandit7@bandit:~$ cat data.txt | grep millionth
 millionth	*****
 ```
