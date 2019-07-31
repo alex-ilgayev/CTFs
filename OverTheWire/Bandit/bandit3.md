@@ -8,7 +8,7 @@ ls, cd, cat, file, du, find
 ## Solution
 
 We listing all the files (include hidden) with `ls -lha`:
-```
+```bash
 bandit3@bandit:~$ cd inhere/
 bandit3@bandit:~/inhere$ ls -lha
 total 12K
@@ -18,7 +18,7 @@ drwxr-xr-x 3 root    root    4.0K Oct 16  2018 ..
 bandit3@bandit:~/inhere$ 
 ```
 and printing the hidden file:
-```
+```bash
 bandit3@bandit:~/inhere$ cat .hidden
 *****
 ```
