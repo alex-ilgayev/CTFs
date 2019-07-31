@@ -12,7 +12,7 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
 Base64 is encoding/decoding format which converts binary to human-readable strings and vice-versa.
 Decoding the file using simple command:
-```
+```bash
 bandit10@bandit:~$ base64 -d data.txt 
 The password is *****
 ```
