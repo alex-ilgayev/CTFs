@@ -11,7 +11,7 @@ ls, cd, cat, file, du, find
 ## Solution
 
 Using the file size should be enough to use `find` command to file the flag:
-```
+```bash
 bandit5@bandit:~$ find . -size 1033c
 ./inhere/maybehere07/.file2
 bandit5@bandit:~$ cat ./inhere/maybehere07/.file2
