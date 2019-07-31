@@ -12,7 +12,7 @@ ssh
 ## Solution
 
 After we logged in we check the folder and print it:
-```
+```bash
 bandit0@bandit:~$ ls
 readme
 bandit0@bandit:~$ cat readme 
