@@ -52,7 +52,7 @@ We can see that the "key" is `user.FILE0` and the value is the very long string 
 At first I thought the strings is base64 encoded for binary file, but I was wrong, and this isn't base64 encoding.</br>
 Later i've seen `--only-values` parameter for the `getfattr`.</br>
 If we use the following command: `getfattr -n user.FILE0 --only-values credentials.txt` we getting binary. if we redirect it to a file we'll get a picture file which looks like:</br>
-![pic](https://imgur.com/a/Rgr6Dj6.png)
+![pic](https://i.imgur.com/Q0HkUzd.png)
 
 flag - CTF{congratsyoufoundmycreds}
 
