@@ -1,5 +1,5 @@
 # CTFs and Wargames
-My name is Alex Ilgayev and I have a my hobby is solving security challenges.
+My name is Alex Ilgayev and my hobby is solving security challenges.
 I made a repository of a CTFs and Wargames collection with their appropriate writeup, for learning purposes.
 
 Hope you enjoy it !
