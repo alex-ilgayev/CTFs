@@ -4,7 +4,7 @@ Like every year, Checkpoint released their annual [CTF competition](https://csa.
 This time they promised that the best solvers will be invited to the CSA - Checkpoint Security Academy, a training for security researchers.
 
 The CTF had various challenges in the topics of: Reversing, Development, Misc, and Crypto.
-I had great time solving the challenges (unfortunately hasn't managed to solve them all), and posting here the writeups for the one I managed to solve.
+I had great time solving the challenges (unfortunately hasn't managed to solve them all), and because Checkpoint hiring process has ended I allow myself to post here the writeups for the one I managed to solve.
 
 Hope you enjoy, and thanks to the research team in Checkpoint for the CTF !
 
