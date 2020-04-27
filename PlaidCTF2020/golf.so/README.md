@@ -8,11 +8,11 @@
 
 The linked site contains some leaderboard table with the ability to upload new solutions:
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/15ca4f58-dc9a-4cd7-adf8-8a295c88bd37/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200425T151336Z&X-Amz-Expires=86400&X-Amz-Signature=cb7cbcb759565fdba88944b11c3b2485913e9b66d8e84a7bf19a2cb0fee65e99&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![](https://i.imgur.com/cNrhzC5.png)
 
 When we try to upload we get the following message:
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f358e68a-b758-4d95-901a-9361569d2588/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200425T151452Z&X-Amz-Expires=86400&X-Amz-Signature=8c000938c00d354de004e58a3002ef20f5c836ce7d16d894bb0844058cb345d1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![](https://i.imgur.com/sBGKwLg.png)
 
 Means we must create shared object which should run `execve` upon loading, and be small enough.
 
@@ -214,13 +214,13 @@ Not helping. Lets open in IDA the first GCC compiled version and dissect it.
 
 **Program Header for the Dynamic data:**
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f1060e23-8425-4f8a-aded-f8ea1b518f99/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200425T151549Z&X-Amz-Expires=86400&X-Amz-Signature=0219b683fa1f8a0bd5bada506d9843eca5ea450689c2329911306e1eb44e2e32&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![](https://i.imgur.com/zcfC2Yh.png)
 
 It's `Virtual Address` field points to mapped address which contains more information about dynamic linking.
 
 **Dynamic Linking Struct:**
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/85f79862-1dea-41d5-80a5-fcadab8a8e67/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200425T151632Z&X-Amz-Expires=86400&X-Amz-Signature=d18f99e8505a09abd79d4d2f13d36b47a7c408379d5e9a8278f883ca31cdc190&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![](https://i.imgur.com/qV6j1vX.png)
 
 Digging into [http://osr507doc.sco.com/en/topics/ELF_dynam_section.html](http://osr507doc.sco.com/en/topics/ELF_dynam_section.html) led me into the next information:
 
@@ -232,11 +232,11 @@ Digging into [http://osr507doc.sco.com/en/topics/ELF_dynam_section.html](http://
 - `DT_GNU_HASH` - Not sure about it's meaning. Because it was a must for a proper loading, I copied the values form this executable.
 - `DT_STRTAB` - String table pointer. Contains important strings for loading and linking
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2b87f653-c69e-475b-92ad-90d717bd61af/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200425T151656Z&X-Amz-Expires=86400&X-Amz-Signature=16ae76e650007e5f4f0b3d5abba602b115b57bcbddb5b5ea31bbd03744ff8c2f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![](https://i.imgur.com/tBc6B3Y.png)
 
 - `DT_SYMTAB` - Symbol table pointer.
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ac888d12-e663-4573-8f0e-58d52ef84a66/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200425T151707Z&X-Amz-Expires=86400&X-Amz-Signature=f77dda7c88f2e92f9ee7f1c92825b12e91317536db38bff97773b500791f2c95&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![](https://i.imgur.com/COiM6fs.png)
 
 - `DT_STRSZ` - String table size.
 - `DT_SYMENT` - Symbol table entry size.
@@ -347,7 +347,7 @@ alex@ubuntu:~/Desktop/writeup$ wc -c try3
 
 And the first flag:
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3b83e2e9-6efa-497b-a3fc-27acb7f2573c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200425T151720Z&X-Amz-Expires=86400&X-Amz-Signature=3b4a09774596aa5f7e4fc3977a8f927a9b57d1fccc14cea9a9b2a198851c384b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![](https://i.imgur.com/4N29Vvw.png)
 
 ### Reducing to the Minimum
 
@@ -520,4 +520,4 @@ alex@ubuntu:~/Desktop/writeup$ wc -c try4
 
 When we submit it we get the second flag:
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c56e77b9-226f-4877-9cb9-ac2b39ac2e23/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200425T151745Z&X-Amz-Expires=86400&X-Amz-Signature=7b5eb7b697a322f41ce0895deaf972935b06228e2ae0fe063738e59f0004f9f5&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![](https://i.imgur.com/7fJmzpA.png)
