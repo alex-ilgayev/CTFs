@@ -1,5 +1,19 @@
 # Snappaste (Part 1) Writeup
 
+We felt like there were not enough pasting services, so we created Snappaste! For better privacy, each pasted text can only be accessed once. We care about performance, and therefore we developed Snappaste in C++. We hope that we didn't introduce any security bugs :)
+
+URL: https://snappaste.ctf.bsidestlv.com/
+
+To compile, Use the following commands:
+
+gcc -c -std=c99 zlib/*.c  
+g++ -c -std=c++14 snappaste.cc   
+g++ -o snappaste *.o -pthread  
+
+By Michael Maltsev
+
+## Solution
+
 First thing we did was observing the packets in packet capture software (for example Fiddler) and build a script to create valid packets.
 
 **Python script to reproduce a paste request:**
